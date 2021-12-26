@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>引擎 on Freemind</title>
+    <link>https://yyycode.github.io/freemind/categories/%E5%BC%95%E6%93%8E/</link>
+    <description>Recent content in 引擎 on Freemind</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;#xA9; 2021 Bruce Powered by&amp;nbsp;&lt;a target=&#34;_blank&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; &amp; &lt;a target=&#34;_blank&#34; href=&#34;https://tailwindcss.com/&#34;&gt;Tailwind CSS&lt;/a&gt; &amp; &lt;a href=&#34;https://github.com/yyycode/hugo-freemind&#34; target=&#34;_blank&#34;&gt;Freemind&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 15 Dec 2021 22:39:50 +0800</lastBuildDate><atom:link href="https://yyycode.github.io/freemind/categories/%E5%BC%95%E6%93%8E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tdengine</title>
+      <link>https://yyycode.github.io/freemind/posts/tdengine/</link>
+      <pubDate>Wed, 15 Dec 2021 22:39:50 +0800</pubDate>
+      
+      <guid>https://yyycode.github.io/freemind/posts/tdengine/</guid>
+      <description>What is TDengine？ TDengine is an open-sourced big data platform under GNU AGPL v3.0, designed and optimized for the Internet of Things (IoT), Connected Cars, Industrial IoT, and IT Infrastructure and Application Monitoring. Besides the 10x faster time-series database, it provides caching, stream computing, message queuing and other functionalities to reduce the complexity and cost of development and operation.
+  10x Faster on Insert/Query Speeds: Through the innovative design on storage, on a single-core machine, over 20K requests can be processed, millions of data points can be ingested, and over 10 million data points can be retrieved in a second.</description>
+    </item>
+    
+  </channel>
+</rss>

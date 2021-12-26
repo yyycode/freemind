@@ -1,0 +1,377 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <script type="text/javascript" src='/freemind/dist/head.min.js'></script>
+
+
+
+    
+    <link rel="stylesheet" href="/freemind/css/custom.css">
+
+
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script><body class='text-zinc-800 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-800'>
+        <div class='container relative m-auto'>
+            <div id="fm-search-backdrop" data-base-url="https://yyycode.github.io/freemind" class="fixed inset-0 hidden w-screen h-screen z-50 backdrop-blur-sm">
+    <div class='lg:w-1/2 lg:m-auto h-64 lg:h-96 m-2 lg:mt-48 px-6 py-2 opacity-90 rounded-xl shadow-2xl bg-zinc-100 dark:bg-zinc-700'>
+        <div class='flex items-center border-b border-dashed border-zinc-800 dark:border-zinc-200'>
+            <svg t="1640012909647"  class="w-6 h-6 fill-gray-600 dark:fill-gray-300 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6656" width="200" height="200"><path d="M469.333 192c153.174 0 277.334 124.16 277.334 277.333 0 68.054-24.534 130.411-65.216 178.688L846.336 818.24l-48.341 49.877L630.4 695.125a276.053 276.053 0 0 1-161.067 51.542C316.16 746.667 192 622.507 192 469.333S316.16 192 469.333 192z m0 64C351.51 256 256 351.51 256 469.333s95.51 213.334 213.333 213.334 213.334-95.51 213.334-213.334S587.157 256 469.333 256z" p-id="6657"></path></svg>
+            <input id="fm-search-input"
+                class="w-full h-12 rounded-md p-4 bg-inherit placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none"
+                type="text" placeholder="Search documentation" />
+        </div>
+        <div id="fm-search-results" data-color='bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200' class="my-2 h-44 md:h-72 overflow-y-scroll">
+        </div>
+    </div>
+</div>
+            <div class='fixed shadow-md inset-x-0 top-0 z-40 bg-zinc-200 dark:bg-zinc-800'><div class="flex justify-between items-center h-16 lg:h-20 px-4 lg:px-72">
+  <a href="/freemind/" class="text-xl">Freemind</a>
+  <div class='hidden lg:flex lg:space-x-8 lg:items-center'>
+    
+    
+      <a href="/freemind/"
+        class='text-center p-2 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:text-zinc-200 dark:hover:text-zinc-800 rounded '>Home</a>
+    
+      <a href="/freemind/posts/"
+        class='text-center p-2 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:text-zinc-200 dark:hover:text-zinc-800 rounded  bg-zinc-100 dark:bg-zinc-700 '>Posts</a>
+    
+      <a href="/freemind/categories/"
+        class='text-center p-2 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:text-zinc-200 dark:hover:text-zinc-800 rounded '>Categories</a>
+    
+      <a href="/freemind/tags/"
+        class='text-center p-2 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:text-zinc-200 dark:hover:text-zinc-800 rounded '>Tags</a>
+    
+      <a href="/freemind/about/"
+        class='text-center p-2 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:text-zinc-200 dark:hover:text-zinc-800 rounded '>About</a>
+    
+    <div id="fm-dark-button">
+      <svg t="1640012994194"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6946" width="200" height="200"><path d="M512 170.666667c15.530667 0 30.805333 1.045333 45.781333 3.050666a206.72 206.72 0 0 0-70.165333 155.434667c0 114.453333 92.8 207.232 207.232 207.232a206.72 206.72 0 0 0 155.434667-70.165333c2.005333 14.976 3.050667 30.250667 3.050666 45.781333 0 188.522667-152.810667 341.333333-341.333333 341.333333S170.666667 700.522667 170.666667 512 323.477333 170.666667 512 170.666667z m-75.029333 74.261333l-6.229334 1.834667C317.226667 281.493333 234.666667 387.114667 234.666667 512c0 153.173333 124.16 277.333333 277.333333 277.333333 127.146667 0 234.346667-85.589333 267.072-202.304-26.773333 8.746667-55.125333 13.354667-84.224 13.354667-149.781333 0-271.232-121.450667-271.232-271.232 0-25.856 3.648-51.136 10.581333-75.242667l2.773334-8.96zM751.232 170.666667v77.696h77.717333v64h-77.717333v77.738666h-64v-77.738666h-77.717333v-64h77.717333V170.666667h64z" p-id="6947"></path></svg>
+    </div>
+    <div id="fm-light-button" class="hidden">
+      <svg t="1640012965185"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6801" width="200" height="200"><path d="M478.634667 811.349333a304.490667 304.490667 0 0 0 64.021333 0.277334v124.330666h-64v-124.608z m267.776-110.229333l87.594666 87.637333-45.226666 45.248-87.658667-87.594666c16.64-13.44 31.829333-28.629333 45.290667-45.290667z m-469.994667-1.493333c13.333333 16.746667 28.416 32 44.970667 45.568L232.533333 834.005333l-45.248-45.226666 89.130667-89.130667zM512 261.034667c138.602667 0 250.986667 112.384 250.986667 250.986666 0 138.602667-112.384 250.986667-250.986667 250.986667-138.602667 0-250.986667-112.384-250.986667-250.986667 0-138.602667 112.384-250.986667 250.986667-250.986666z m0 64a186.986667 186.986667 0 1 0 0 373.973333 186.986667 186.986667 0 0 0 0-373.973333z m423.957333 153.642666v64h-124.330666a304.725333 304.725333 0 0 0-0.277334-64h124.608z m-723.306666 0a304.490667 304.490667 0 0 0-0.277334 64H85.333333v-64h127.317334zM232.533333 187.264l90.346667 90.304c-16.64 13.44-31.829333 28.629333-45.290667 45.290667L187.306667 232.533333l45.226666-45.248z m556.224 0l45.248 45.226667-88.810666 88.874666a302.997333 302.997333 0 0 0-45.546667-44.970666l89.109333-89.130667zM542.656 85.333333v127.04a304.725333 304.725333 0 0 0-64 0.277334V85.333333h64z" p-id="6802"></path></svg>
+    </div>
+    
+      <div id="fm-search-button">
+        <svg t="1640012909647"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6656" width="200" height="200"><path d="M469.333 192c153.174 0 277.334 124.16 277.334 277.333 0 68.054-24.534 130.411-65.216 178.688L846.336 818.24l-48.341 49.877L630.4 695.125a276.053 276.053 0 0 1-161.067 51.542C316.16 746.667 192 622.507 192 469.333S316.16 192 469.333 192z m0 64C351.51 256 256 351.51 256 469.333s95.51 213.334 213.333 213.334 213.334-95.51 213.334-213.334S587.157 256 469.333 256z" p-id="6657"></path></svg>
+      </div>
+    
+  </div>
+  
+  <div class="lg:hidden flex space-x-4 items-center">
+    <div id="fm-mobile-dark-button">
+      <svg t="1640012994194"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6946" width="200" height="200"><path d="M512 170.666667c15.530667 0 30.805333 1.045333 45.781333 3.050666a206.72 206.72 0 0 0-70.165333 155.434667c0 114.453333 92.8 207.232 207.232 207.232a206.72 206.72 0 0 0 155.434667-70.165333c2.005333 14.976 3.050667 30.250667 3.050666 45.781333 0 188.522667-152.810667 341.333333-341.333333 341.333333S170.666667 700.522667 170.666667 512 323.477333 170.666667 512 170.666667z m-75.029333 74.261333l-6.229334 1.834667C317.226667 281.493333 234.666667 387.114667 234.666667 512c0 153.173333 124.16 277.333333 277.333333 277.333333 127.146667 0 234.346667-85.589333 267.072-202.304-26.773333 8.746667-55.125333 13.354667-84.224 13.354667-149.781333 0-271.232-121.450667-271.232-271.232 0-25.856 3.648-51.136 10.581333-75.242667l2.773334-8.96zM751.232 170.666667v77.696h77.717333v64h-77.717333v77.738666h-64v-77.738666h-77.717333v-64h77.717333V170.666667h64z" p-id="6947"></path></svg>
+    </div>
+    <div id="fm-mobile-light-button" class="hidden">
+      <svg t="1640012965185"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6801" width="200" height="200"><path d="M478.634667 811.349333a304.490667 304.490667 0 0 0 64.021333 0.277334v124.330666h-64v-124.608z m267.776-110.229333l87.594666 87.637333-45.226666 45.248-87.658667-87.594666c16.64-13.44 31.829333-28.629333 45.290667-45.290667z m-469.994667-1.493333c13.333333 16.746667 28.416 32 44.970667 45.568L232.533333 834.005333l-45.248-45.226666 89.130667-89.130667zM512 261.034667c138.602667 0 250.986667 112.384 250.986667 250.986666 0 138.602667-112.384 250.986667-250.986667 250.986667-138.602667 0-250.986667-112.384-250.986667-250.986667 0-138.602667 112.384-250.986667 250.986667-250.986666z m0 64a186.986667 186.986667 0 1 0 0 373.973333 186.986667 186.986667 0 0 0 0-373.973333z m423.957333 153.642666v64h-124.330666a304.725333 304.725333 0 0 0-0.277334-64h124.608z m-723.306666 0a304.490667 304.490667 0 0 0-0.277334 64H85.333333v-64h127.317334zM232.533333 187.264l90.346667 90.304c-16.64 13.44-31.829333 28.629333-45.290667 45.290667L187.306667 232.533333l45.226666-45.248z m556.224 0l45.248 45.226667-88.810666 88.874666a302.997333 302.997333 0 0 0-45.546667-44.970666l89.109333-89.130667zM542.656 85.333333v127.04a304.725333 304.725333 0 0 0-64 0.277334V85.333333h64z" p-id="6802"></path></svg>
+    </div>
+    
+      <div id="fm-mobile-search-button">
+        <svg t="1640012909647"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6656" width="200" height="200"><path d="M469.333 192c153.174 0 277.334 124.16 277.334 277.333 0 68.054-24.534 130.411-65.216 178.688L846.336 818.24l-48.341 49.877L630.4 695.125a276.053 276.053 0 0 1-161.067 51.542C316.16 746.667 192 622.507 192 469.333S316.16 192 469.333 192z m0 64C351.51 256 256 351.51 256 469.333s95.51 213.334 213.333 213.334 213.334-95.51 213.334-213.334S587.157 256 469.333 256z" p-id="6657"></path></svg>
+      </div>
+    
+    <button id="fm-menu-button" type="button" class='inline-flex items-center justify-center' aria-controls="mobile-menu" aria-expanded="true">
+      <span class="sr-only">Open main menu</span>
+      <svg t="1640052697802"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7091" width="200" height="200"><path d="M256 734.101333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 493.184v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 252.245333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666z" p-id="7092"></path></svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden absolute inset-x-0 top-16 lg:top-20 shadow-md" id="mobile-menu">
+  <div class='flex flex-col w-screen border-y border-slate-300 dark:border-slate-500 text-zinc-800 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-800'>
+    
+    
+    <a href="/freemind/"
+      class='text-center text-xl p-2 '>Home</a>
+    
+    <a href="/freemind/posts/"
+      class='text-center text-xl p-2  bg-zinc-100 dark:bg-zinc-700 '>Posts</a>
+    
+    <a href="/freemind/categories/"
+      class='text-center text-xl p-2 '>Categories</a>
+    
+    <a href="/freemind/tags/"
+      class='text-center text-xl p-2 '>Tags</a>
+    
+    <a href="/freemind/about/"
+      class='text-center text-xl p-2 '>About</a>
+    
+  </div>
+</div></div>
+            <div id="fm-main" class="mt-16 lg:mt-20 px-4 lg:px-72">
+    <div class="lg:mx-36 space-x-2 py-8">
+    
+        
+    
+        
+    
+        
+    
+
+        
+            <a href="/">Home</a>
+        
+    
+
+        
+            <span>></span>
+            <a href="/freemind/posts/">Posts</a>
+        
+    
+
+        
+            <span>></span>
+            <a href="/freemind/posts/go-zero/">Go Zero</a>
+        
+    
+</div>
+    <p class="text-2xl text-center pb-14">Go Zero</p>
+    <div class="lg:mx-36 mb-6 flex space-x-3">
+        <div class="flex space-x-2 items-center">
+            <svg t="1639797049322"  class="w-5 h-5 fill-slate-700 dark:fill-slate-300"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2028" width="200" height="200"><path d="M233.944615 83.180308V47.104c0-25.993846 21.346462-47.104 47.812923-47.104 26.387692 0 47.812923 21.110154 47.812924 47.104v36.076308h299.559384V47.104c0-25.993846 21.425231-47.104 47.812923-47.104 26.466462 0 47.812923 21.110154 47.812923 47.104v36.076308h62.227693c97.122462 0 176.128 77.902769 176.128 173.607384V363.913846a46.710154 46.710154 0 0 1 0 18.589539v401.723077c0 95.940923-79.163077 173.843692-176.20677 173.843692l-621.252923-0.787692C76.327385 949.011692 6.144 874.653538 6.144 784.462769v-527.753846c0-95.625846 79.005538-173.528615 176.285538-173.528615h51.515077z m0 70.892307h-51.515077C124.770462 153.993846 77.981538 200.073846 77.981538 256.787692v69.316923a49.309538 49.309538 0 0 1 2.993231 0h810.299077v-69.316923c0-56.713846-46.788923-102.872615-104.369231-102.872615h-62.227692v54.429538c0 25.993846-21.346462 47.261538-47.812923 47.261539a47.497846 47.497846 0 0 1-47.812923-47.104v-54.587077H329.570462v54.429538c0 25.993846-21.425231 47.261538-47.812924 47.261539a47.497846 47.497846 0 0 1-47.812923-47.104v-54.587077z m657.408 266.31877H81.132308l-2.993231-0.07877v364.150154c0 56.713846 46.867692 102.793846 104.369231 102.793846H786.904615c57.580308 0 104.369231-46.158769 104.369231-102.793846V420.391385z m-383.606153 347.923692h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.182769c0-25.993846 21.346462-47.104 47.812923-47.104h45.686154c26.387692 0 47.812923 21.110154 47.812923 47.104a47.419077 47.419077 0 0 1-47.812923 47.182769z m-213.464616-148.164923h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.182769c0-25.993846 21.346462-47.104 47.812923-47.104h45.686154c26.387692 0 47.812923 21.110154 47.812923 47.104 0 26.072615-21.425231 47.182769-47.812923 47.182769z m213.464616 0h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.182769c0-25.993846 21.346462-47.104 47.812923-47.104h45.686154c26.387692 0 47.812923 21.110154 47.812923 47.104 0 26.072615-21.425231 47.182769-47.812923 47.182769z m212.91323 0h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.182769c0-25.993846 21.425231-47.104 47.812923-47.104h45.686154c26.466462 0 47.891692 21.110154 47.891693 47.104 0 26.072615-21.425231 47.182769-47.891693 47.182769z m-426.377846 148.086154h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.104c0-25.993846 21.346462-47.104 47.812923-47.104h45.686154c26.387692 0 47.812923 21.110154 47.812923 47.104a47.419077 47.419077 0 0 1-47.812923 47.182769z m426.377846 0h-45.686154a47.497846 47.497846 0 0 1-47.812923-47.104c0-25.993846 21.425231-47.104 47.812923-47.104h45.686154c26.466462 0 47.891692 21.110154 47.891693 47.104 0 26.072615-21.425231 47.182769-47.891693 47.182769z" p-id="2029"></path></svg>
+            <span class="text-sm">December 15, 2021</span>
+        </div>
+        
+            <span class='text-sm px-1 py-0.5 rounded bg-zinc-50 dark:bg-zinc-700'>Go</span>
+        
+            <span class='text-sm px-1 py-0.5 rounded bg-zinc-50 dark:bg-zinc-700'>Zero</span>
+        
+        
+    </div>
+    <div class="prose m-auto dark:prose-invert">
+        <h1 id="go-zero">go-zero</h1>
+<p>English | <a href="readme-cn.md">简体中文</a></p>
+<p><strong>Note: To meet the requirements of Open Source Foundation, we moved go-zero from tal-tech to zeromicro (a neutral GitHub organization).</strong></p>
+<h2 id="0-what-is-go-zero">0. what is go-zero</h2>
+<p>go-zero (listed in CNCF Landscape: <a href="https://landscape.cncf.io/?selected=go-zero">https://landscape.cncf.io/?selected=go-zero</a>) is a web and rpc framework with lots of builtin engineering practices. It’s born to ensure the stability of the busy services with resilience design, and has been serving sites with tens of millions users for years.</p>
+<p>go-zero contains simple API description syntax and code generation tool called <code>goctl</code>. You can generate Go, iOS, Android, Kotlin, Dart, TypeScript, JavaScript from .api files with <code>goctl</code>.</p>
+<p>Advantages of go-zero:</p>
+<ul>
+<li>improve the stability of the services with tens of millions of daily active users</li>
+<li>builtin chained timeout control, concurrency control, rate limit, adaptive circuit breaker, adaptive load shedding, even no configuration needed</li>
+<li>builtin middlewares also can be integrated into your frameworks</li>
+<li>simple API syntax, one command to generate couple of different languages</li>
+<li>auto validate the request parameters from clients</li>
+<li>plenty of builtin microservice management and concurrent toolkits</li>
+</ul>
+<h2 id="1-backgrounds-of-go-zero">1. Backgrounds of go-zero</h2>
+<p>At the beginning of 2018, we decided to re-design our system, from monolithic architecture with Java+MongoDB to microservice architecture. After researches and comparison, we chose to:</p>
+<ul>
+<li>Golang based
+<ul>
+<li>great performance</li>
+<li>simple syntax</li>
+<li>proven engineering efficiency</li>
+<li>extreme deployment experience</li>
+<li>less server resource consumption</li>
+</ul>
+</li>
+<li>Self-designed microservice architecture
+<ul>
+<li>I have rich experience on designing microservice architectures</li>
+<li>easy to location the problems</li>
+<li>easy to extend the features</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-design-considerations-on-go-zero">2. Design considerations on go-zero</h2>
+<p>By designing the microservice architecture, we expected to ensure the stability, as well as the productivity. And from just the beginning, we have the following design principles:</p>
+<ul>
+<li>keep it simple</li>
+<li>high availability</li>
+<li>stable on high concurrency</li>
+<li>easy to extend</li>
+<li>resilience design, failure-oriented programming</li>
+<li>try best to be friendly to the business logic development, encapsulate the complexity</li>
+<li>one thing, one way</li>
+</ul>
+<p>After almost half a year, we finished the transfer from monolithic system to microservice system, and deployed on August 2018. The new system guaranteed the business growth, and the system stability.</p>
+<h2 id="3-the-implementation-and-features-of-go-zero">3. The implementation and features of go-zero</h2>
+<p>go-zero is a web and rpc framework that integrates lots of engineering practices. The features are mainly listed below:</p>
+<ul>
+<li>powerful tool included, less code to write</li>
+<li>simple interfaces</li>
+<li>fully compatible with net/http</li>
+<li>middlewares are supported, easy to extend</li>
+<li>high performance</li>
+<li>failure-oriented programming, resilience design</li>
+<li>builtin service discovery, load balancing</li>
+<li>builtin concurrency control, adaptive circuit breaker, adaptive load shedding, auto trigger, auto recover</li>
+<li>auto validation of API request parameters</li>
+<li>chained timeout control</li>
+<li>auto management of data caching</li>
+<li>call tracing, metrics and monitoring</li>
+<li>high concurrency protected</li>
+</ul>
+<p>As below, go-zero protects the system with couple layers and mechanisms:</p>
+<h2 id="4-future-development-plans-of-go-zero">4. Future development plans of go-zero</h2>
+<ul>
+<li>auto generate API mock server, make the client debugging easier</li>
+<li>auto generate the simple integration test for the server side just from the .api files</li>
+</ul>
+<h2 id="5-installation">5. Installation</h2>
+<p>Run the following command under your project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get -u github.com/tal-tech/go-zero
+</code></pre></div><h2 id="6-quick-start">6. Quick Start</h2>
+<ol start="0">
+<li>
+<p>full examples can be checked out from below:</p>
+<p><a href="https://github.com/zeromicro/zero-doc/blob/main/doc/shorturl-en.md">Rapid development of microservice systems</a></p>
+<p><a href="https://github.com/zeromicro/zero-doc/blob/main/docs/zero/bookstore-en.md">Rapid development of microservice systems - multiple RPCs</a></p>
+</li>
+<li>
+<p>install goctl</p>
+<p><code>goctl</code>can be read as <code>go control</code>. <code>goctl</code> means not to be controlled by code, instead, we control it. The inside <code>go</code> is not <code>golang</code>. At the very beginning, I was expecting it to help us improve the productivity, and make our lives easier.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># for Go 1.15 and earlier</span>
+GO111MODULE<span style="color:#f92672">=</span>on go get -u github.com/tal-tech/go-zero/tools/goctl@cli
+
+<span style="color:#75715e"># for Go 1.16 and later</span>
+go install github.com/tal-tech/go-zero/tools/goctl@cli
+</code></pre></div><p>make sure goctl is executable.</p>
+</li>
+<li>
+<p>create the API file, like greet.api, you can install the plugin of goctl in vs code, api syntax is supported.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> (
+  <span style="color:#a6e22e">Request</span> {
+    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`path:&#34;name,options=you|me&#34;`</span> <span style="color:#75715e">// parameters are auto validated
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#a6e22e">Response</span> {
+    <span style="color:#a6e22e">Message</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;message&#34;`</span>
+  }
+)
+
+<span style="color:#a6e22e">service</span> <span style="color:#a6e22e">greet</span><span style="color:#f92672">-</span><span style="color:#a6e22e">api</span> {
+  <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">handler</span> <span style="color:#a6e22e">GreetHandler</span>
+  <span style="color:#a6e22e">get</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">greet</span><span style="color:#f92672">/</span><span style="color:#a6e22e">from</span><span style="color:#f92672">/</span>:<span style="color:#a6e22e">name</span>(<span style="color:#a6e22e">Request</span>) <span style="color:#a6e22e">returns</span> (<span style="color:#a6e22e">Response</span>)
+}
+</code></pre></div><p>the .api files also can be generate by goctl, like below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goctl api -o greet.api
+</code></pre></div></li>
+<li>
+<p>generate the go server side code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goctl api go -api greet.api -dir greet
+</code></pre></div><p>the generated files look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Plain" data-lang="Plain">├── greet
+│   ├── etc
+│   │   └── greet-api.yaml        // configuration file
+│   ├── greet.go                  // main file
+│   └── internal
+│       ├── config
+│       │   └── config.go         // configuration definition
+│       ├── handler
+│       │   ├── greethandler.go   // get/put/post/delete routes are defined here
+│       │   └── routes.go         // routes list
+│       ├── logic
+│       │   └── greetlogic.go     // request logic can be written here
+│       ├── svc
+│       │   └── servicecontext.go // service context, mysql/redis can be passed in here
+│       └── types
+│           └── types.go          // request/response defined here
+└── greet.api                     // api description file
+</code></pre></div><p>the generated code can be run directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd greet
+go mod init
+go mod tidy
+go run greet.go -f etc/greet-api.yaml
+</code></pre></div><p>by default, it’s listening on port 8888, while it can be changed in configuration file.</p>
+<p>you can check it by curl:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -i http://localhost:8888/greet/from/you
+</code></pre></div><p>the response looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+Date<span style="color:#f92672">:</span> <span style="color:#ae81ff">Sun, 30 Aug 2020 15:32:35 GMT</span>
+Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</code></pre></div></li>
+<li>
+<p>Write the business logic code</p>
+<ul>
+<li>the dependencies can be passed into the logic within servicecontext.go, like mysql, reds etc.</li>
+<li>add the logic code in logic package according to .api file</li>
+</ul>
+</li>
+<li>
+<p>Generate code like Java, TypeScript, Dart, JavaScript etc. just from the api file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goctl api java -api greet.api -dir greet
+goctl api dart -api greet.api -dir greet
+...
+</code></pre></div></li>
+</ol>
+<h2 id="7-benchmark">7. Benchmark</h2>
+<p><a href="https://github.com/smallnest/go-web-framework-benchmark">Checkout the test code</a></p>
+<h2 id="8-documents-adding">8. Documents (adding)</h2>
+<ul>
+<li><a href="https://go-zero.dev/en/">Documents</a></li>
+<li><a href="https://github.com/zeromicro/zero-doc/blob/main/doc/shorturl-en.md">Rapid development of microservice systems</a></li>
+<li><a href="https://github.com/zeromicro/zero-doc/blob/main/docs/zero/bookstore-en.md">Rapid development of microservice systems - multiple RPCs</a></li>
+<li><a href="https://github.com/zeromicro/zero-examples">Examples</a></li>
+</ul>
+<h2 id="give-a-star-">Give a Star! ⭐</h2>
+<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>
+
+    </div>
+    <div class="lg:mx-6 mt-6 pt-6 pb-20 flex flex-col lg:flex-row justify-between border-t border-slate-300 dark:border-slate-500 border-dashed">
+        <div>
+            
+                <a href="/freemind/posts/tdengine/">Prev: Tdengine</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    
+        
+        <div id="fm-toc" class='z-40 max-h-80 overflow-scroll hidden lg:block border-y border-slate-300 dark:border-slate-500 fixed top-16 lg:top-52 inset-x-0 lg:left-3/4 bg-zinc-100 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 p-4 w-full lg:w-96 lg:shadow-md lg:rounded-md'>
+            <div class="mb-4 text-xl">Table of contents</div>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-what-is-go-zero">0. what is go-zero</a></li>
+    <li><a href="#1-backgrounds-of-go-zero">1. Backgrounds of go-zero</a></li>
+    <li><a href="#2-design-considerations-on-go-zero">2. Design considerations on go-zero</a></li>
+    <li><a href="#3-the-implementation-and-features-of-go-zero">3. The implementation and features of go-zero</a></li>
+    <li><a href="#4-future-development-plans-of-go-zero">4. Future development plans of go-zero</a></li>
+    <li><a href="#5-installation">5. Installation</a></li>
+    <li><a href="#6-quick-start">6. Quick Start</a></li>
+    <li><a href="#7-benchmark">7. Benchmark</a></li>
+    <li><a href="#8-documents-adding">8. Documents (adding)</a></li>
+    <li><a href="#give-a-star-">Give a Star! ⭐</a></li>
+  </ul>
+</nav>
+        </div>
+        
+        <div class='z-50 lg:hidden fixed bottom-20 right-4 inline-flex items-center justify-center p-2 rounded bg-zinc-100 dark:bg-zinc-700'>
+            <button id="fm-toc-button" type="button">
+                <span class="sr-only">Open main menu</span>
+                <svg t="1640052697802"  class="w-7 h-7 fill-zinc-900 dark:fill-zinc-50 hover:cursor-pointer"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7091" width="200" height="200"><path d="M256 734.101333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 493.184v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 252.245333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666z" p-id="7092"></path></svg>
+            </button>
+        </div>
+    
+
+            </div>
+            
+                <div class='fixed inset-x-0 bottom-0 text-sm py-2 text-center bg-zinc-200 dark:bg-zinc-800'>&#xA9; 2021 Bruce Powered by&nbsp;<a target="_blank" href="https://gohugo.io/">Hugo</a> & <a target="_blank" href="https://tailwindcss.com/">Tailwind CSS</a> & <a href="https://github.com/yyycode/hugo-freemind" target="_blank">Freemind</a></div>
+            
+        </div>
+    
+        <script type="text/javascript" src='/freemind/dist/toc.min.js'></script>
+    
+
+    <script type="text/javascript" src='/freemind/dist/common.min.js'></script>
+</body>
+</html>
