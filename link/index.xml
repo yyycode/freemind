@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Link on Freemind</title>
+    <link>https://yyycode.github.io/freemind/link/</link>
+    <description>Recent content in Link on Freemind</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;#xA9; 2021 Bruce Powered by&amp;nbsp;&lt;a target=&#34;_blank&#34; href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; &amp; &lt;a target=&#34;_blank&#34; href=&#34;https://tailwindcss.com/&#34;&gt;Tailwind CSS&lt;/a&gt; &amp; &lt;a href=&#34;https://github.com/yyycode/hugo-freemind&#34; target=&#34;_blank&#34;&gt;Freemind&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 27 Dec 2021 23:32:16 +0800</lastBuildDate><atom:link href="https://yyycode.github.io/freemind/link/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
